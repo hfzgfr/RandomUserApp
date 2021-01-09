@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import axios from 'axios';
 import store from './store/store';
 import { addUsers } from './actions/users';
+import { Provider } from 'react-redux';
+import Header from './components/Header';
 class App extends React.Component {
     componentDidMount() {
         axios.get('http://localhost:3000/users')
@@ -13,9 +15,15 @@ class App extends React.Component {
     }
     render() {
         return (
-            <h1>Welcome to REACT!!!</h1>
+        <div>
+            <Header />
+        </div>
         )
     }
 }
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(
+<Provider store={store}>
+    <App />
+</Provider>,
+document.getElementById('root'));
