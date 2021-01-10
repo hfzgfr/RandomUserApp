@@ -4,6 +4,7 @@ import axios from 'axios';
 import store from './store/store';
 import { addUsers } from './actions/users';
 import { Provider } from 'react-redux';
+
 import Header from './components/Header';
 class App extends React.Component {
     componentDidMount() {
@@ -14,12 +15,12 @@ class App extends React.Component {
             })
     }
     render() {
-        return (
-        <div>
-            <Header />
-        </div>
-        )
-    }
+return (
+    <div>
+        <Header />
+    </div>
+)
+}
 }
 
 ReactDOM.render(
